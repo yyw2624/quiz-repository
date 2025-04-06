@@ -26,7 +26,7 @@ public class AnswerResultDTO {
         // answerList를 스트림으로 변환
         // answer 객체를 AnswerDTO로 변환
         // toList()를 이용해서 리스트로 변환해서 저장
-        List<AnswerDTO> answerDTO = answerList.stream().map(AnswerDTO::from).toList();
+        List<AnswerDTO> answerDTO = answerList.stream().map(AnswerDTO::fromEntity).toList();
 
         // AnswerResultDTO에 있는 객체를 score, correctCount, answerDTO라는 변수로 리턴
         return  new AnswerResultDTO(correctCount * 10, correctCount, answerDTO);
