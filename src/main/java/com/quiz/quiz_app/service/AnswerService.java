@@ -60,7 +60,7 @@ public class AnswerService {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new IllegalArgumentException("유저가 존재하지 않습니다."));
         return answerRepository.findByUser(user).stream()
-                .map(AnswerDTO::from)
+                .map(AnswerDTO::fromEntity)
                 .collect(Collectors.toList());
     }
 
@@ -71,7 +71,7 @@ public class AnswerService {
         Quiz quiz = quizRepository.findById(quizId)
                 .orElseThrow(() -> new IllegalArgumentException("퀴즈가 존재하지 않습니다."));
         return answerRepository.findByQuiz(quiz).stream()
-                .map(AnswerDTO::from)
+                .map(AnswerDTO::fromEntity)
                 .collect(Collectors.toList());
     }
 }
