@@ -10,11 +10,6 @@ public class AnswerSubmitDTO {
     private Long quizId; // 퀴즈 ID
     private AnswerType userAnswer; // 유저가 고른 답
 
-    // AnswerSubmitDTO 값을 Entity로 변환 후 Answer DB에 저장하기 위한 작업
-    public Answer toEntity(){
-        return Answer.builder()
-                .userAnswer(userAnswer)
-                .build();
-    }
+
 
 }

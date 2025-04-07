@@ -1,5 +1,6 @@
 package com.quiz.quiz_app.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.quiz.quiz_app.entity.Answer;
 import lombok.Builder;
 import lombok.Getter;
@@ -12,6 +13,8 @@ public class AnswerDTO {
     private Long quizId;             // 퀴즈 ID
     private String question;         // 문제 내용
     private String selectedAnswer;   // 유저가 고른 답 (문자열 O/X)
+
+    @JsonProperty
     private boolean isCorrect;       // 정답 여부
 
     @Builder
